@@ -1,8 +1,8 @@
 Changelog
 =========
 
-0.1-dev (unreleased)
---------------------
+0.0.1 (2012-09-12)
+------------------
 
 - Package created using templer
   []

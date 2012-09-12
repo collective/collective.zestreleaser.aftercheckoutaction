@@ -3,7 +3,7 @@
 import ConfigParser
 import os
 import os.path
-from suprocess import call
+from subprocess import call
 
 
 def split_destination(destination):

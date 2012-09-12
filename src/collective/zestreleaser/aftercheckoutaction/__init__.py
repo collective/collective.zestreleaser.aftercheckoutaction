@@ -39,8 +39,8 @@ def choose_destination(context, config, section):
         return None
     items = sorted(config.items(section, vars=context), key=lambda x: len(x[0]),
                    reverse=True)
-    package = package.lower()
+    package = context['name'].lower()
     for (prefix, destination) in items:
-        if context['name'].startswith(prefix.lower()):
+        if package.startswith(prefix.lower()):
             return destination
     return None

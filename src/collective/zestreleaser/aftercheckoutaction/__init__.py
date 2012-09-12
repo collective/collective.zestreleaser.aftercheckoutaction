@@ -19,7 +19,7 @@ def split_destination(destination):
 
 def action(context):
     import pdb;pdb.set_trace()
-    method = choose_destination(context,
+    method = choose_destination(dict(name=context['name'], version=context['version']),
             read_configuration('~/.pypirc'),
             'collective.zestreleaser.aftercheckoutaction')
     if not method:

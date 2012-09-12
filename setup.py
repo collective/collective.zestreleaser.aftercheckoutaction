@@ -41,7 +41,7 @@ setup(name='collective.zestreleaser.aftercheckoutaction',
       entry_points="""
 
       # -*- Entry points: -*-
-      [zest.releaser.releaser.aftercheckout]
+      [zest.releaser.releaser.after_checkout]
       action=collective.zestreleaser.aftercheckoutaction:action
       """,
       )

@@ -18,13 +18,16 @@ def split_destination(destination):
 
 
 def action(context):
-    import pdb;pdb.set_trace()
-    method = choose_destination(dict(name=context['name'], version=context['version']),
-            read_configuration('~/.pypirc'),
-            'collective.zestreleaser.aftercheckoutaction')
+    method = choose_destination(dict(name=context['name'],
+                                version=context['version']),
+                                read_configuration('~/.pypirc'),
+                                'collective.zestreleaser.aftercheckoutaction'
+                                )
     if not method:
         return
+
     # Be careful, shell=True is dangerous
+
     call(method, shell=True)
 
 
@@ -37,8 +40,8 @@ def read_configuration(filename):
 def choose_destination(context, config, section):
     if section not in config.sections():
         return None
-    items = sorted(config.items(section, vars=context), key=lambda x: len(x[0]),
-                   reverse=True)
+    items = sorted(config.items(section, vars=context), key=lambda x: \
+                   len(x[0]), reverse=True)
     package = context['name'].lower()
     for (prefix, destination) in items:
         if package.startswith(prefix.lower()):

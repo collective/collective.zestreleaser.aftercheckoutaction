@@ -1,2 +1,1 @@
-do3cc.zestreleaser.aftercheckoutaction
-======================================
+README.txt
